@@ -10,5 +10,5 @@
     </p>
   <% end %>
 </div>
-
 <%= link_to "New tweet", new_tweet_path %>
+<%== pagy_next_link(@pagy, text: 'More...', link_extra: 'id="next_link"') %>

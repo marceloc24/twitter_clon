@@ -15,6 +15,12 @@ gem "pg", "~> 1.1"
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", "~> 5.0"
 
+#pagy
+gem 'pagy', '~> 6.0', '>= 6.0.4'
+
+#faker
+gem 'faker', '~> 3.2'
+
 # Use JavaScript with ESM import maps [https://github.com/rails/importmap-rails]
 gem "importmap-rails"
 
