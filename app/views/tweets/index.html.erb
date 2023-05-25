@@ -2,6 +2,13 @@
 
 <h1>Tweets</h1>
 
+<div id="search_box">
+  <%= form_with url: tweets_path, method: :get do |f| %>
+    <%= f.text_field :query_text, placeholder: '.....', value: params[:query_text] %>
+    <%= f.submit 'Buscar' %>
+  <% end %>
+</div>
+
 <div id="tweets">
   <% @tweets.each do |tweet| %>
     <%= render tweet %>
@@ -11,4 +18,7 @@
   <% end %>
 </div>
 <%= link_to "New tweet", new_tweet_path %>
-<%== pagy_next_link(@pagy, text: 'More...', link_extra: 'id="next_link"') %>
+
+<div id="load_more">
+  <%== pagy_next_link(@pagy, text: 'More...', link_extra: 'id="next_link"') %>
+</div>
