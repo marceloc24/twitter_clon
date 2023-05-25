@@ -3,8 +3,12 @@
 <%= render @tweet %>
 
 <div>
-  <%= link_to "Edit this tweet", edit_tweet_path(@tweet) %> |
-  <%= link_to "Back to tweets", tweets_path %>
-
-  <%= button_to "Destroy this tweet", @tweet, method: :delete %>
+  <div style="margin:10px;">
+    <%= link_to "Editar tweet", edit_tweet_path(@tweet), class:"btn btn-outline-success" %> |
+    <%= link_to "Volver a tweets", tweets_path, class: "btn btn-outline-secondary" %>
+  </div>
+  
+  <div style="margin:10px;">
+    <%= button_to "Eliminar tweet", @tweet, method: :delete, class:"btn btn-danger" %>
+  </div>
 </div>

@@ -1,24 +1,30 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Tweets</h1>
+<div id="title" style="margin:10px;">
+  <h1>Tweets</h1>
+</div>
 
-<div id="search_box">
+<div id="search_box" style="margin:10px;">
   <%= form_with url: tweets_path, method: :get do |f| %>
-    <%= f.text_field :query_text, placeholder: '.....', value: params[:query_text] %>
-    <%= f.submit 'Buscar' %>
+    <div class="input-group mb-3">
+      <%= f.text_field :query_text, placeholder: 'Buscar en twitter', value: params[:query_text], class:"form-control" %>
+      <%= f.submit "Buscar", class: "btn btn-outline-secondary"%>
+    </div>
   <% end %>
 </div>
 
-<div id="tweets">
-  <% @tweets.each do |tweet| %>
-    <%= render tweet %>
-    <p>
-      <%= link_to "Show this tweet", tweet %>
-    </p>
-  <% end %>
-</div>
-<%= link_to "New tweet", new_tweet_path %>
 
-<div id="load_more">
-  <%== pagy_next_link(@pagy, text: 'More...', link_extra: 'id="next_link"') %>
+<div id="new_tweet" style="margin:10px;">
+  <%= link_to "New tweet", new_tweet_path, class: "btn btn-primary" %>
+</div>
+<div id="tweets" style="margin:10px;">
+  <table border="1" class="table">
+    <% @tweets.each do |tweet| %>
+      <%= render tweet %>
+    <% end %>
+  </table>
+</div>
+
+<div id="page_nav" style="margin:10px;">
+  <%= raw pagy_nav(@pagy)%>
 </div>

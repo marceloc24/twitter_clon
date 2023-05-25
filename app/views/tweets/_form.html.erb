@@ -11,17 +11,17 @@
     </div>
   <% end %>
 
-  <div>
+  <div style="margin:10px;">
     <%= form.label :description, style: "display: block" %>
-    <%= form.text_field :description %>
+    <%= form.text_field :description, class:"form-control" %>
   </div>
 
-  <div>
+  <div style="margin:10px;">
     <%= form.label :username, style: "display: block" %>
-    <%= form.text_field :username %>
+    <%= form.text_field :username, class:"form-control" %>
   </div>
 
-  <div>
-    <%= form.submit %>
+  <div style="margin:10px;">
+    <%= form.submit "Nuevo tweet", class: "btn btn-primary" %>
   </div>
 <% end %>
